@@ -3,6 +3,28 @@
     background-color: #f1f3f4;
     border-right: 1px solid #dadada;
     padding: 5px;
+    flex-shrink: 0;
+    overflow-y: auto;
+}
+
+/* Адаптивность для планшетов */
+@media (max-width: 1024px) {
+    .sidebar-left {
+        width: 100%;
+        border-right: none;
+        border-bottom: 1px solid #dadada;
+        max-height: 200px;
+    }
+}
+
+/* Адаптивность для мобильных */
+@media (max-width: 768px) {
+    .sidebar-left {
+        width: 100%;
+        border-right: none;
+        border-bottom: 1px solid #dadada;
+        max-height: 150px;
+    }
 }
 
 .sidebar-left-search {

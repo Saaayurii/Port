@@ -1,0 +1,280 @@
+.documentationWrapper {
+    min-height: 100vh;
+    background: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
+    padding: 20px;
+}
+
+.backButton {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    padding: 10px 20px;
+    background-color: white;
+    border: 1px solid #e0e0e0;
+    border-radius: 8px;
+    cursor: pointer;
+    font-size: 14px;
+    color: #333;
+    transition: all 0.3s ease;
+    margin-bottom: 20px;
+}
+
+.backButton:hover {
+    background-color: #f5f5f5;
+    border-color: #c0c0c0;
+    transform: translateX(-3px);
+}
+
+.backButton svg {
+    transition: transform 0.3s ease;
+}
+
+.backButton:hover svg {
+    transform: translateX(-3px);
+}
+
+.documentationContainer {
+    display: grid;
+    grid-template-columns: 280px 1fr;
+    gap: 30px;
+    max-width: 1400px;
+    margin: 0 auto;
+}
+
+/* Sidebar */
+.sidebar {
+    background-color: white;
+    border-radius: 12px;
+    padding: 30px 20px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.07);
+    height: fit-content;
+    position: sticky;
+    top: 20px;
+}
+
+.sidebarTitle {
+    font-size: 20px;
+    font-weight: 700;
+    color: #1a1a1a;
+    margin-bottom: 20px;
+    padding-bottom: 15px;
+    border-bottom: 2px solid #e8eaed;
+}
+
+.navigation {
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+}
+
+.navItem {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    padding: 12px 15px;
+    background: none;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    font-size: 15px;
+    color: #5f6368;
+    text-align: left;
+    transition: all 0.2s ease;
+    font-weight: 500;
+}
+
+.navItem:hover {
+    background-color: #f1f3f4;
+    color: #1a73e8;
+}
+
+.navItem.active {
+    background-color: #e8f0fe;
+    color: #1a73e8;
+    font-weight: 600;
+}
+
+.navIcon {
+    font-size: 20px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+/* Content */
+.content {
+    background-color: white;
+    border-radius: 12px;
+    padding: 40px 50px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.07);
+    min-height: 600px;
+}
+
+.header {
+    margin-bottom: 50px;
+    padding-bottom: 30px;
+    border-bottom: 3px solid #e8eaed;
+}
+
+.header h1 {
+    font-size: 36px;
+    font-weight: 700;
+    color: #1a1a1a;
+    margin-bottom: 15px;
+}
+
+.headerDescription {
+    font-size: 18px;
+    color: #5f6368;
+    line-height: 1.6;
+    max-width: 800px;
+}
+
+/* Sections */
+.section {
+    margin-bottom: 60px;
+    scroll-margin-top: 20px;
+}
+
+.sectionHeader {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    margin-bottom: 15px;
+}
+
+.sectionHeader h2 {
+    font-size: 28px;
+    font-weight: 700;
+    color: #1a1a1a;
+}
+
+.sectionIcon {
+    font-size: 32px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.subtitle {
+    font-size: 20px;
+    font-weight: 600;
+    color: #1a73e8;
+    margin-bottom: 10px;
+}
+
+.description {
+    font-size: 16px;
+    color: #5f6368;
+    line-height: 1.7;
+    margin-bottom: 30px;
+}
+
+/* Items */
+.itemsList {
+    display: flex;
+    flex-direction: column;
+    gap: 25px;
+}
+
+.item {
+    padding: 20px;
+    background-color: #f8f9fa;
+    border-left: 4px solid #1a73e8;
+    border-radius: 8px;
+    transition: all 0.3s ease;
+}
+
+.item:hover {
+    background-color: #e8f0fe;
+    border-left-color: #0d47a1;
+    transform: translateX(5px);
+}
+
+.itemTitle {
+    font-size: 18px;
+    font-weight: 600;
+    color: #1a1a1a;
+    margin-bottom: 10px;
+}
+
+.itemText {
+    font-size: 15px;
+    color: #5f6368;
+    line-height: 1.6;
+}
+
+/* Footer */
+.footer {
+    margin-top: 60px;
+    padding-top: 30px;
+    border-top: 2px solid #e8eaed;
+    text-align: center;
+    color: #5f6368;
+}
+
+.footer p {
+    margin-bottom: 10px;
+    font-size: 15px;
+}
+
+.version {
+    font-size: 13px;
+    color: #9aa0a6;
+}
+
+/* Responsive */
+@media (max-width: 1024px) {
+    .documentationContainer {
+        grid-template-columns: 1fr;
+    }
+
+    .sidebar {
+        position: relative;
+        top: 0;
+    }
+
+    .content {
+        padding: 30px 25px;
+    }
+
+    .header h1 {
+        font-size: 28px;
+    }
+
+    .sectionHeader h2 {
+        font-size: 24px;
+    }
+}
+
+@media (max-width: 768px) {
+    .documentationWrapper {
+        padding: 10px;
+    }
+
+    .content {
+        padding: 20px 15px;
+    }
+
+    .header h1 {
+        font-size: 24px;
+    }
+
+    .headerDescription {
+        font-size: 16px;
+    }
+
+    .sectionHeader h2 {
+        font-size: 20px;
+    }
+
+    .navigation {
+        flex-direction: row;
+        flex-wrap: wrap;
+        overflow-x: auto;
+    }
+
+    .navItem {
+        flex: 0 0 auto;
+    }
+}

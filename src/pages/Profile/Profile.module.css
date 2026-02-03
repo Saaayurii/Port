@@ -1,0 +1,318 @@
+.profileWrapper {
+    min-height: calc(100vh - 150px);
+    background-color: #f8f9fa;
+    padding: 20px;
+}
+
+.backButton {
+    max-width: 1000px;
+    margin: 0 auto 20px auto;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    background-color: white;
+    border: 2px solid #e0e0e0;
+    padding: 10px 20px;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 14px;
+    font-weight: 600;
+    color: #5f6368;
+    transition: all 0.3s;
+}
+
+.backButton:hover {
+    background-color: #f8f9fa;
+    border-color: #667eea;
+    color: #667eea;
+    transform: translateX(-5px);
+}
+
+.backButton svg {
+    transition: transform 0.3s;
+}
+
+.backButton:hover svg {
+    transform: translateX(-3px);
+}
+
+.profileContainer {
+    max-width: 1000px;
+    margin: 0 auto;
+    background-color: white;
+    border-radius: 8px;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+    overflow: hidden;
+}
+
+.profileHeader {
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    padding: 40px;
+    display: flex;
+    align-items: center;
+    gap: 30px;
+    color: white;
+    flex-wrap: wrap;
+}
+
+.avatarSection {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 15px;
+}
+
+.avatar {
+    width: 120px;
+    height: 120px;
+    background-color: white;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+    padding: 20px;
+}
+
+.avatar svg {
+    width: 100%;
+    height: 100%;
+}
+
+.changeAvatarBtn {
+    background-color: rgba(255, 255, 255, 0.2);
+    color: white;
+    border: 2px solid white;
+    padding: 8px 16px;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 13px;
+    font-weight: 500;
+    transition: all 0.3s;
+}
+
+.changeAvatarBtn:hover {
+    background-color: white;
+    color: #667eea;
+}
+
+.headerInfo {
+    flex: 1;
+}
+
+.headerInfo h1 {
+    margin: 0 0 10px 0;
+    font-size: 32px;
+    font-weight: 600;
+}
+
+.role {
+    font-size: 18px;
+    opacity: 0.9;
+    margin: 0 0 20px 0;
+}
+
+.editBtn {
+    background-color: white;
+    color: #667eea;
+    border: none;
+    padding: 12px 24px;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 14px;
+    font-weight: 600;
+    transition: all 0.3s;
+}
+
+.editBtn:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+}
+
+.statsSection {
+    display: flex;
+    justify-content: space-around;
+    padding: 30px 40px;
+    background-color: #f8f9fa;
+    border-bottom: 1px solid #e0e0e0;
+    flex-wrap: wrap;
+    gap: 20px;
+}
+
+.statCard {
+    text-align: center;
+    flex: 1;
+    min-width: 120px;
+}
+
+.statValue {
+    font-size: 32px;
+    font-weight: 700;
+    color: #667eea;
+    margin-bottom: 5px;
+}
+
+.statLabel {
+    font-size: 14px;
+    color: #5f6368;
+    font-weight: 500;
+}
+
+.profileContent {
+    padding: 40px;
+}
+
+.section {
+    margin-bottom: 40px;
+}
+
+.section h2 {
+    font-size: 22px;
+    color: #202124;
+    margin-bottom: 20px;
+    padding-bottom: 10px;
+    border-bottom: 2px solid #667eea;
+    font-weight: 600;
+}
+
+.infoGrid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 25px;
+}
+
+.infoItem label {
+    display: block;
+    font-size: 13px;
+    color: #5f6368;
+    margin-bottom: 8px;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+}
+
+.infoItem p {
+    font-size: 16px;
+    color: #202124;
+    margin: 0;
+    padding: 10px 0;
+}
+
+.input {
+    width: 100%;
+    padding: 10px 12px;
+    border: 2px solid #e0e0e0;
+    border-radius: 5px;
+    font-size: 16px;
+    color: #202124;
+    transition: all 0.3s;
+    box-sizing: border-box;
+}
+
+.input:focus {
+    outline: none;
+    border-color: #667eea;
+    box-shadow: 0 0 0 3px rgba(102, 126, 234, 0.1);
+}
+
+.textarea {
+    width: 100%;
+    padding: 12px;
+    border: 2px solid #e0e0e0;
+    border-radius: 5px;
+    font-size: 16px;
+    color: #202124;
+    font-family: inherit;
+    resize: vertical;
+    transition: all 0.3s;
+    box-sizing: border-box;
+}
+
+.textarea:focus {
+    outline: none;
+    border-color: #667eea;
+    box-shadow: 0 0 0 3px rgba(102, 126, 234, 0.1);
+}
+
+.bio {
+    font-size: 16px;
+    line-height: 1.6;
+    color: #5f6368;
+    margin: 0;
+}
+
+.actionButtons {
+    display: flex;
+    gap: 15px;
+    margin-top: 30px;
+    padding-top: 30px;
+    border-top: 1px solid #e0e0e0;
+}
+
+.saveBtn {
+    background-color: #667eea;
+    color: white;
+    border: none;
+    padding: 12px 30px;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 15px;
+    font-weight: 600;
+    transition: all 0.3s;
+}
+
+.saveBtn:hover {
+    background-color: #5568d3;
+    transform: translateY(-2px);
+    box-shadow: 0 4px 12px rgba(102, 126, 234, 0.3);
+}
+
+.cancelBtn {
+    background-color: white;
+    color: #5f6368;
+    border: 2px solid #e0e0e0;
+    padding: 12px 30px;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 15px;
+    font-weight: 600;
+    transition: all 0.3s;
+}
+
+.cancelBtn:hover {
+    background-color: #f8f9fa;
+    border-color: #d0d0d0;
+}
+
+@media (max-width: 768px) {
+    .profileHeader {
+        flex-direction: column;
+        text-align: center;
+        padding: 30px 20px;
+    }
+
+    .headerInfo h1 {
+        font-size: 24px;
+    }
+
+    .profileContent {
+        padding: 20px;
+    }
+
+    .infoGrid {
+        grid-template-columns: 1fr;
+    }
+
+    .statsSection {
+        padding: 20px;
+    }
+
+    .actionButtons {
+        flex-direction: column;
+    }
+
+    .saveBtn,
+    .cancelBtn {
+        width: 100%;
+    }
+}

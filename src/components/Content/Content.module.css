@@ -2,4 +2,20 @@
     flex: 1;
     display: flex;
     justify-content: space-between;
+    overflow: hidden;
+    min-height: 0;
+}
+
+/* Адаптивность для планшетов */
+@media (max-width: 1024px) {
+    .content {
+        flex-direction: column;
+    }
+}
+
+/* Адаптивность для мобильных */
+@media (max-width: 768px) {
+    .content {
+        flex-direction: column;
+    }
 }
