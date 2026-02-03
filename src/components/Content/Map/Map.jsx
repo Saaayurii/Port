@@ -1,5 +1,4 @@
 import React, { useState, useCallback, useEffect, useRef, useMemo } from 'react';
-import styles from './Map.module.css';
 import { useMapContext } from '../../../contexts/MapContext';
 
 const CoordinateSystem = ({
