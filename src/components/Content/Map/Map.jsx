@@ -537,7 +537,7 @@ const CoordinateSystem = ({
           </text>
         )}
 
-        {mapObjects.map(renderMapObject)}
+        {(mapObjects || []).map(renderMapObject)}
 
         {children({ scaleX, scaleY, scale })}
       </svg>
