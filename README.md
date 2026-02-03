@@ -74,3 +74,4 @@ This section has moved here: [https://facebook.github.io/create-react-app/docs/t
 ### `Порядок действий
 
 Необходимо установить node и npm. Затем клонируется репозиторий в папку, вводится команда npm i (для установки пакетов). Старт проекта npm start
+# Port
