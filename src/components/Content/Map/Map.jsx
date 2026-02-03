@@ -7,8 +7,9 @@ const CoordinateSystem = ({
   gridStep = 10,
   children
 }) => {
-  const { updateMapData, mapObjects, updateMapObject, layerSettings } = useMapContext();
+  const { updateMapData, mapObjects = [], updateMapObject, layerSettings = {} } = useMapContext();
   const containerRef = useRef(null);
+
   const [dimensions, setDimensions] = useState({ width: 0, height: 0 });
   const [scale, setScale] = useState(1);
   const [offset, setOffset] = useState({ x: 0, y: 0 });
@@ -36,7 +37,6 @@ const CoordinateSystem = ({
   const visibleWidth = dimensions.width / pixelsPerUnit;
   const visibleHeight = dimensions.height / pixelsPerUnit;
 
-  // ← Вот исправление: useMemo вместо создания нового массива каждый раз
   const xRange = useMemo(
     () => [
       offset.x - visibleWidth / 2,
@@ -179,8 +179,17 @@ const CoordinateSystem = ({
   };
 
   const renderMapObject = (obj) => {
-    const x = scaleX(obj.x);
-    const y = scaleY(obj.y);
+    // Защита от битых / отсутствующих объектов
+    if (!obj || typeof obj !== 'object' || !obj.id || !obj.type) {
+      return null;
+    }
+
+    // Защита от невалидных координат
+    const objX = Number.isFinite(obj.x) ? obj.x : 0;
+    const objY = Number.isFinite(obj.y) ? obj.y : 0;
+
+    const x = scaleX(objX);
+    const y = scaleY(objY);
     const size = 10 / scale;
     const isBeingDragged = draggingObject?.id === obj.id;
 
@@ -383,7 +392,7 @@ const CoordinateSystem = ({
           y2={dimensions.height}
           stroke={isMainLine ? "#97bd83" : "#ffffff"}
           strokeWidth={isMainLine ? 1 : 0.5}
-          opacity={(isMainLine ? 1 : 0.6) * layerSettings.gridOpacity}
+          opacity={(isMainLine ? 1 : 0.6) * (layerSettings.gridOpacity ?? 1)}
         />
       );
     }
@@ -403,7 +412,7 @@ const CoordinateSystem = ({
           y2={scaleY(y)}
           stroke={isMainLine ? "#97bd83" : "#ffffff"}
           strokeWidth={isMainLine ? 1 : 0.5}
-          opacity={(isMainLine ? 1 : 0.6) * layerSettings.gridOpacity}
+          opacity={(isMainLine ? 1 : 0.6) * (layerSettings.gridOpacity ?? 1)}
         />
       );
     }
@@ -422,18 +431,20 @@ const CoordinateSystem = ({
         overflow: 'hidden'
       }}
     >
-      <div style={{
-        position: 'absolute',
-        top: 10,
-        left: 10,
-        zIndex: 100,
-        display: 'flex',
-        gap: '5px',
-        flexWrap: 'wrap',
-        backgroundColor: 'rgba(255,255,255,0.8)',
-        padding: '5px',
-        borderRadius: '5px'
-      }}>
+      <div
+        style={{
+          position: 'absolute',
+          top: 10,
+          left: 10,
+          zIndex: 100,
+          display: 'flex',
+          gap: '5px',
+          flexWrap: 'wrap',
+          backgroundColor: 'rgba(255,255,255,0.8)',
+          padding: '5px',
+          borderRadius: '5px'
+        }}
+      >
         {[25, 50, 75, 100, 125, 150, 175].map((percent) => (
           <button
             key={percent}
@@ -488,7 +499,7 @@ const CoordinateSystem = ({
             y={scaleY(mapImage.y + mapImage.height)}
             width={mapImage.width * pixelsPerUnit}
             height={mapImage.height * pixelsPerUnit}
-            opacity={layerSettings.mapImageOpacity}
+            opacity={layerSettings.mapImageOpacity ?? 1}
             preserveAspectRatio="none"
             style={{ pointerEvents: 'none' }}
           />
@@ -539,7 +550,7 @@ const CoordinateSystem = ({
 
         {(mapObjects || []).map(renderMapObject)}
 
-        {children({ scaleX, scaleY, scale })}
+        {children?.({ scaleX, scaleY, scale })}
       </svg>
     </div>
   );
