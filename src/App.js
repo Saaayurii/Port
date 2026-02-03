@@ -14,7 +14,7 @@ function App() {
   return (
     <AuthProvider>
       <MapProvider>
-        <Router basename="/deployport">
+        <Router >
           <Routes>
             <Route path="/login" element={<Login/>} />
             <Route path="*" element={
