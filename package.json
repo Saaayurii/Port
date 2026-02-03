@@ -1,6 +1,5 @@
 {
   "name": "deployport",
-  "homepage": "https://levashoffffff.github.io/deployport",
   "version": "0.1.0",
   "private": true,
   "dependencies": {
